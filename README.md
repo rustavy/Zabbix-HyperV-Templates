@@ -17,16 +17,29 @@ The following _host_ parameters are monitored:
 	* Hyper-V Hypervisor Logical Processor(_Total)\% Guest Run Time
 	* Hyper-V Hypervisor Logical Processor(_Total)\% Hypervisor Run Time
 	* Hyper-V Hypervisor Logical Processor(_Total)\% Idle Time
+	* Hyper-V Hypervisor\Monitored Notifications
+	* Hyper-V Hypervisor\Logical Processors
+	* Hyper-V Hypervisor\Partitions
+	* Hyper-V Hypervisor\Virtual Processors
 	* Hyper-V Hypervisor Root Virtual Processor(_Total)\% Guest Run Time
 	* Hyper-V Hypervisor Root Virtual Processor(_Total)\% Hypervisor Run Time
 	* Hyper-V Hypervisor Root Virtual Processor(_Total)\% Remote Run Time
 	* Hyper-V Hypervisor Root Virtual Processor(_Total)\% Total Run Time
+	* Hyper-V Hypervisor\Total Pages
 	* Hyper-V Hypervisor Virtual Processor(_Total)\% Guest Run Time
 	* Hyper-V Hypervisor Virtual Processor(_Total)\% Hypervisor Run Time
 	* Hyper-V Hypervisor Virtual Processor(_Total)\% Remote Run Time
 	* Hyper-V Hypervisor Virtual Processor(_Total)\% Total Run Time
+	* Hyper-V Virtual Switch(*)\Bytes Received/sec
+	* Hyper-V Virtual Switch(*)\Bytes Sent/sec
 	* Hyper-V Virtual Switch(*)\Bytes
 	* Hyper-V Virtual Machine Health Summary\Health Critical
+	* Hyper-V Virtual Machine Health Summary\Health Ok
+	* HyperV Service State
+	* vmwp.exe Memory Total
+	* vmwp.exe Virtual Memory Total
+	* vmwp.exe Process Count
+
 	
 
 
