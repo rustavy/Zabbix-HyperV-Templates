@@ -37,13 +37,16 @@ Allow Zabbix to create necessary groups. (Just to check that everything works as
 *  Copy provided PowerShell script to the desired location on your HyperV host machine.
 
 * Put these lines in your _zabbix_agentd.conf_ on Hyper-V Host  
- Adjust the paths according to the previous step.
+Adjust the paths according to the previous step.
 
 `UserParameter=hyperv.discovery,powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf.ps1"`
-
 `UserParameter=hyperv.discoveryitem[*],powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf.ps1" "$1" "$2"`
-
 `UserParameter=hyperv.check[*],powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf.ps1" "$1" "$2" "$3"`
+
+or these line on Russion localized systems.
+`UserParameter=hyperv.discovery,powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf-rus.ps1"`
+`UserParameter=hyperv.discoveryitem[*],powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf-rus.ps1" "$1" "$2"`
+`UserParameter=hyperv.check[*],powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf.ps1-rus" "$1" "$2" "$3"`
 
 * Restart zabbix agent.
 
@@ -57,12 +60,18 @@ Allow Zabbix to create necessary groups. (Just to check that everything works as
 		* link VM host with "Template Windows HyperV VM Guest"
 
 ## F.A.Q.
+In some cases, settings help with errors and time-outs in _zabbix_agentd.conf_:
+Timeout = 30
+UnsafeUserParameters = 1
 
+as well as increasing the buffer volume:
+BufferSend = 15
+BufferSize = 1000
 
 
 ## Bugs
 * There are no Triggers for VM Guest.
-
+* Sometimes a timeout occurs when executing a shell script.
 
 ## License:
 
