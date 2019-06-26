@@ -1,8 +1,8 @@
 <# 
 Zabbix Agent PowerShell script for Hyper-V monitoring 
 
-
 Copyright (c) 2015,2016 Dmitry Sarkisov <ait.meijin@gmail.com>
+Changed for support russian counters by Rustavy Zhigulin <zro@mail.ru>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -27,16 +27,31 @@ $hostname = Get-WmiObject win32_computersystem | Select-Object -ExpandProperty n
 
 $VMName = $VMName.Replace("_" + $hostname, '')
 
+function ConvertTo-Encoding ([string]$From, [string]$To)
+{
+    Begin
+    {
+        $encFrom = [System.Text.Encoding]::GetEncoding($from)
+        $encTo = [System.Text.Encoding]::GetEncoding($to)
+    }
+    Process
+    {
+        $bytes = $encTo.GetBytes($_)
+        $bytes = [System.Text.Encoding]::Convert($encFrom, $encTo, $bytes)
+        $encTo.GetString($bytes)
+    }
+}
+
 <# Zabbix Hyper-V Virtual Machine Discovery #>
 if ($QueryName -eq '') {
     
-	
+    
     $colItems = Get-VM
 
     write-host "{"
     write-host " `"data`":["
     write-host
-	
+    
     $n = $colItems.Count
 
     foreach ($objItem in $colItems) {
@@ -55,7 +70,6 @@ if ($QueryName -eq '') {
 }
 
 
-
 <# Zabbix Hyper-V VM Perf Counter Discovery #>
 if ($psboundparameters.Count -eq 2) {
 
@@ -64,7 +78,7 @@ if ($psboundparameters.Count -eq 2) {
         
         ('GetVMDisks'){
             $ItemType = "VMDISK"
-            $Results =  (Get-Counter -Counter '\Hyper-V Virtual Storage Device(*)\Read Bytes/sec').CounterSamples  | Where-Object  {$_.InstanceName -like '*-'+$VMName+'-*'} | select InstanceName
+            $Results =  (Get-Counter -Counter '\Hyper-V Virtual Storage Device(*)\Read Bytes/sec').CounterSamples  | Where-Object  {$_.InstanceName -like '*-'+$VMName+'*'} | select InstanceName
         }
 
         ('GetVMNICs'){
@@ -83,13 +97,14 @@ if ($psboundparameters.Count -eq 2) {
     write-host "{"
     write-host " `"data`":["
     write-host      
-    #write-host $Results
-               
        
     $n = ($Results | measure).Count
 
             foreach ($objItem in $Results) {
+                $objItem = $objItem.InstanceName.Replace("_сетевой", "_Сетевой")
+                $objItem = $objItem.InstanceName.Replace("_устаревший", "_Устаревший")
                 $line = " { `"{#"+$ItemType+"}`":`""+$objItem.InstanceName+"`"}"
+                $line = " { `"{#"+$ItemType+"}`":`""+@($objItem.InstanceName | ConvertTo-Encoding cp866 utf-8)+"`"}"
                  
                 if ($n -gt 1 ){
                     $line += ","
@@ -106,7 +121,6 @@ if ($psboundparameters.Count -eq 2) {
 
     exit
 }
-
 
 
 <# Zabbix Hyper-V VM Get Performance Counter Value #>
@@ -145,7 +159,6 @@ if ($psboundparameters.Count -eq 3) {
                     $Results = (Get-Counter -Counter "\Hyper-V Virtual Network Adapter($VMObject)\Bytes Received/sec").CounterSamples
             }
 
-
             <# Virtual CPU Counters #>
             ('VMCPUTotal'){
                 $ItemType = $QueryName
@@ -162,11 +175,6 @@ if ($psboundparameters.Count -eq 3) {
                 $line = [int]$objItem.CookedValue
                 write-host $line
             }
-        
-
-
 
     exit
 }
-
-
