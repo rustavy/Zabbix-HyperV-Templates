@@ -85,12 +85,12 @@ if ($psboundparameters.Count -eq 2) {
 
         ('GetVMNICs'){
             $ItemType = "VMNIC"
-            $Results = (Get-Counter -Counter '\Виртуальный сетевой адаптер Hyper-V(*)\Отправлено пакетов/сек').CounterSamples | Where-Object  {$_.InstanceName -like $VMName+'_*'} | select InstanceName
+            $Results = (Get-Counter -Counter '\Р’РёСЂС‚СѓР°Р»СЊРЅС‹Р№ СЃРµС‚РµРІРѕР№ Р°РґР°РїС‚РµСЂ Hyper-V(*)\РћС‚РїСЂР°РІР»РµРЅРѕ РїР°РєРµС‚РѕРІ/СЃРµРє').CounterSamples | Where-Object  {$_.InstanceName -like $VMName+'_*'} | select InstanceName
         }
 
         ('GetVMCPUs'){
              $ItemType  ="VMCPU"
-             $Results = (Get-Counter -Counter '\Виртуальный процессор низкоуровневой оболочки Hyper-V(*)\% общего времени работы').CounterSamples | Where-Object {$_.InstanceName -like $VMName+':*'} | select InstanceName
+             $Results = (Get-Counter -Counter '\Р’РёСЂС‚СѓР°Р»СЊРЅС‹Р№ РїСЂРѕС†РµСЃСЃРѕСЂ РЅРёР·РєРѕСѓСЂРѕРІРЅРµРІРѕР№ РѕР±РѕР»РѕС‡РєРё Hyper-V(*)\% РѕР±С‰РµРіРѕ РІСЂРµРјРµРЅРё СЂР°Р±РѕС‚С‹').CounterSamples | Where-Object {$_.InstanceName -like $VMName+':*'} | select InstanceName
         }
             
         default {$Results = "Bad Request"; exit}
@@ -104,8 +104,8 @@ if ($psboundparameters.Count -eq 2) {
     $n = ($Results | measure).Count
 
             foreach ($objItem in $Results) {
-                $objItem = $objItem.InstanceName.Replace("_сетевой", "_Сетевой")
-                $objItem = $objItem.InstanceName.Replace("_устаревший", "_Устаревший")
+                $objItem = $objItem.InstanceName.Replace("_СЃРµС‚РµРІРѕР№", "_РЎРµС‚РµРІРѕР№")
+                $objItem = $objItem.InstanceName.Replace("_СѓСЃС‚Р°СЂРµРІС€РёР№", "_РЈСЃС‚Р°СЂРµРІС€РёР№")
                 $line = " { `"{#"+$ItemType+"}`":`""+@($objItem.InstanceName | ConvertTo-Encoding cp866 utf-8)+"`"}"
                  
                 if ($n -gt 1 ){
@@ -154,18 +154,18 @@ if ($psboundparameters.Count -eq 3) {
             <# Network Counters #>
             ('VMNICSent'){
                     $ItemType = $QueryName
-                    $Results = (Get-Counter -Counter "\Виртуальный сетевой адаптер Hyper-V($VMObject)\Отправлено байт/сек").CounterSamples
+                    $Results = (Get-Counter -Counter "\Р’РёСЂС‚СѓР°Р»СЊРЅС‹Р№ СЃРµС‚РµРІРѕР№ Р°РґР°РїС‚РµСЂ Hyper-V($VMObject)\РћС‚РїСЂР°РІР»РµРЅРѕ Р±Р°Р№С‚/СЃРµРє").CounterSamples
             }
             ('VMNICRecv'){
                     $ItemType = $QueryName
-                    $Results = (Get-Counter -Counter "\Виртуальный сетевой адаптер Hyper-V($VMObject)\Получено байт/сек").CounterSamples
+                    $Results = (Get-Counter -Counter "\Р’РёСЂС‚СѓР°Р»СЊРЅС‹Р№ СЃРµС‚РµРІРѕР№ Р°РґР°РїС‚РµСЂ Hyper-V($VMObject)\РџРѕР»СѓС‡РµРЅРѕ Р±Р°Р№С‚/СЃРµРє").CounterSamples
             }
 
 
             <# Virtual CPU Counters #>
             ('VMCPUTotal'){
                 $ItemType = $QueryName
-                $Results = (Get-Counter -Counter "\Виртуальный процессор низкоуровневой оболочки Hyper-V($VMObject)\% времени работы низкоуровневой оболочки").CounterSamples
+                $Results = (Get-Counter -Counter "\Р’РёСЂС‚СѓР°Р»СЊРЅС‹Р№ РїСЂРѕС†РµСЃСЃРѕСЂ РЅРёР·РєРѕСѓСЂРѕРІРЅРµРІРѕР№ РѕР±РѕР»РѕС‡РєРё Hyper-V($VMObject)\% РІСЂРµРјРµРЅРё СЂР°Р±РѕС‚С‹ РЅРёР·РєРѕСѓСЂРѕРІРЅРµРІРѕР№ РѕР±РѕР»РѕС‡РєРё").CounterSamples
             }
 
 
