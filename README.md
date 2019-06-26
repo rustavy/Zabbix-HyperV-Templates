@@ -46,9 +46,7 @@ Adjust the paths according to the previous step.
 or these line on Russion localized systems.
 
 `UserParameter=hyperv.discovery,powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf-rus.ps1"`
-
 `UserParameter=hyperv.discoveryitem[*],powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf-rus.ps1" "$1" "$2"`
-
 `UserParameter=hyperv.check[*],powershell.exe -file "C:\Program Files\Zabbix\zabbix-vm-perf.ps1-rus" "$1" "$2" "$3"`
 
 * Restart zabbix agent.
