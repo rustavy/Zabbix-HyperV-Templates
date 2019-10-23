@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.0</version>
-    <date>2019-06-26T10:11:54Z</date>
+    <version>4.0</version>
+    <date>2019-10-23T09:25:13Z</date>
     <groups>
         <group>
             <name>HV Srv</name>
@@ -12,8 +12,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template Windows HyperV Host RUS</template>
-            <name>Template Windows HyperV Host RUS</name>
+            <template>Template HV Host RUS</template>
+            <name>Template HV Host RUS</name>
             <description/>
             <groups>
                 <group>
@@ -30,17 +30,15 @@
                     <name>HyperV Virtual Switch B/s Sent</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Виртуальный коммутатор Hyper-V(*)\Отправлено байт/сек&quot;]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -48,11 +46,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -68,22 +63,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Virtual Switch B/s Received</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Виртуальный коммутатор Hyper-V(*)\Получено байт/сек&quot;]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -91,11 +105,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -111,22 +122,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Virtual CPU Guest Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Виртуальный процессор низкоуровневой оболочки Hyper-V(_Total)\% времени гостевой работы&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -134,11 +164,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -154,22 +181,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Virtual CPU Hypervisor Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Виртуальный процессор низкоуровневой оболочки Hyper-V(_Total)\% времени работы низкоуровневой оболочки&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -177,11 +223,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -197,22 +240,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Virtual CPU Remote Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Виртуальный процессор низкоуровневой оболочки Hyper-V(_Total)\% времени удаленного выполнения&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -220,11 +282,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -240,22 +299,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Virtual CPU Total Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Виртуальный процессор низкоуровневой оболочки Hyper-V(_Total)\% общего времени работы&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -263,11 +341,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -283,22 +358,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Root Virtual CPU Guest Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Корневой виртуальный процессор низкоуровневой оболочки Hyper-V(_Total)\% времени гостевой работы&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -306,11 +400,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -326,22 +417,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Root Virtual CPU Hypervisor Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Корневой виртуальный процессор низкоуровневой оболочки Hyper-V(_Total)\% времени работы низкоуровневой оболочки&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -349,11 +459,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -369,22 +476,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Root Virtual CPU Remote Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Корневой виртуальный процессор низкоуровневой оболочки Hyper-V(_Total)\% времени удаленного выполнения&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -392,11 +518,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -412,22 +535,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Root Virtual CPU Total Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Корневой виртуальный процессор низкоуровневой оболочки Hyper-V(_Total)\% общего времени работы&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -435,11 +577,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -455,22 +594,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Logical CPU Guest Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Логический процессор низкоуровневой оболочки Hyper-V(_Total)\% времени гостевой работы&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -478,11 +636,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -498,22 +653,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Logical CPU Idle Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Логический процессор низкоуровневой оболочки Hyper-V(_Total)\% времени простоя&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -521,11 +695,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -541,22 +712,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Logical CPU Hypervisor Runtime %</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Логический процессор низкоуровневой оболочки Hyper-V(_Total)\% времени работы низкоуровневой оболочки&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -564,11 +754,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -584,22 +771,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Number of Virtual CPUs</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Виртуальных процессоров&quot;]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -607,11 +813,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -627,22 +830,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Total Pages</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Всего страниц&quot;]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -650,11 +872,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -670,22 +889,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Number of Logical CPUs</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Логических процессоров&quot;]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -693,11 +931,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -715,22 +950,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Monitored Notifications</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Наблюдаемых уведомлений&quot;]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -738,11 +992,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -758,22 +1009,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Number of Partitions (VMs)</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Разделов&quot;]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -781,11 +1051,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -801,22 +1068,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV VMs OK</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[&quot;\Сводные данные о работоспособности виртуальных машинах Hyper-V\Работоспособность в норме&quot;]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -824,11 +1110,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -844,22 +1127,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV VMs Critical</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>perf_counter[\Сводные данные о работоспособности виртуальных машинах Hyper-V\Критическое состояние]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -867,11 +1169,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -887,22 +1186,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>vmwp.exe Process Count</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>proc.num[vmwp.exe]</key>
                     <delay>60</delay>
-                    <history>30</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -910,11 +1228,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -930,22 +1245,41 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>vmwp.exe Virtual Memory Total</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>proc_info[vmwp.exe,vmsize,sum]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -953,11 +1287,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -973,22 +1304,46 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>1</type>
+                            <params>1024</params>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>vmwp.exe Memory Total</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>proc_info[vmwp.exe,wkset,sum]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -996,11 +1351,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1016,22 +1368,46 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>1</type>
+                            <params>1024</params>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
                 <item>
                     <name>HyperV Service State</name>
                     <type>0</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>service.info[vmms]</key>
                     <delay>60</delay>
-                    <history>14</history>
-                    <trends>365</trends>
+                    <history>2w</history>
+                    <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1039,11 +1415,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1061,6 +1434,27 @@
                         <name>Windows service state</name>
                     </valuemap>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
                 </item>
             </items>
             <discovery_rules>
@@ -1070,7 +1464,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>hyperv.discovery</key>
-                    <delay>1800</delay>
+                    <delay>30m</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -1080,7 +1474,6 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
                     <authtype>0</authtype>
@@ -1101,7 +1494,7 @@
                             </condition>
                         </conditions>
                     </filter>
-                    <lifetime>7</lifetime>
+                    <lifetime>7d</lifetime>
                     <description>HyperV Guest VM Discovery&#13;
 Requires PowerShell script installed on HyperV Host.</description>
                     <item_prototypes/>
@@ -1122,13 +1515,32 @@ Requires PowerShell script installed on HyperV Host.</description>
                             <group_prototypes/>
                             <templates>
                                 <template>
-                                    <name>Template Windows HyperV VM Guest</name>
+                                    <name>Template HV VM</name>
                                 </template>
                             </templates>
                         </host_prototype>
                     </host_prototypes>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
                 </discovery_rule>
             </discovery_rules>
+            <httptests/>
             <macros/>
             <templates/>
             <screens/>
@@ -1136,54 +1548,159 @@ Requires PowerShell script installed on HyperV Host.</description>
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template Windows HyperV Host RUS:perf_counter[&quot;\Сводные данные о работоспособности виртуальных машинах Hyper-V\Работоспособность в норме&quot;].last(0)}=0</expression>
+            <expression>{Template HV Host RUS:perf_counter[&quot;\Сводные данные о работоспособности виртуальных машинах Hyper-V\Работоспособность в норме&quot;].last(0)}=0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>Hyper-V host has 0 VMs in OK state</name>
-            <url>{$ABSURL}triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
-            <status>1</status>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
+            <status>0</status>
             <priority>2</priority>
             <description>Number of VMs in an OK state.</description>
             <type>0</type>
-            <dependencies/>
+            <manual_close>0</manual_close>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} Unavailable by ICMP ping</name>
+                    <expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].max(#3)}=0</expression>
+                    <recovery_expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].min(#3)}&gt;0</recovery_expression>
+                </dependency>
+            </dependencies>
+            <tags>
+                <tag>
+                    <tag>Host</tag>
+                    <value>{HOST.NAME}</value>
+                </tag>
+                <tag>
+                    <tag>Item</tag>
+                    <value>HYPER-V</value>
+                </tag>
+            </tags>
         </trigger>
         <trigger>
-            <expression>{Template Windows HyperV Host RUS:perf_counter[\Сводные данные о работоспособности виртуальных машинах Hyper-V\Критическое состояние].last(0)}&gt;0</expression>
+            <expression>{Template HV Host RUS:perf_counter[\Сводные данные о работоспособности виртуальных машинах Hyper-V\Критическое состояние].last(0)}&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>Hyper-V host has critical VMs</name>
-            <url>{$ABSURL}triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
-            <status>1</status>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
+            <status>0</status>
             <priority>4</priority>
             <description>The number of VMs running in a critical state.</description>
             <type>0</type>
-            <dependencies/>
+            <manual_close>0</manual_close>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} Unavailable by ICMP ping</name>
+                    <expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].max(#3)}=0</expression>
+                    <recovery_expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].min(#3)}&gt;0</recovery_expression>
+                </dependency>
+            </dependencies>
+            <tags>
+                <tag>
+                    <tag>Host</tag>
+                    <value>{HOST.NAME}</value>
+                </tag>
+                <tag>
+                    <tag>Item</tag>
+                    <value>HYPER-V</value>
+                </tag>
+            </tags>
         </trigger>
         <trigger>
-            <expression>{Template Windows HyperV Host RUS:perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Виртуальных процессоров&quot;].last(0)}/{Template Windows HyperV Host RUS:perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Логических процессоров&quot;].last(0)}&gt;5</expression>
+            <expression>{Template HV Host RUS:perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Виртуальных процессоров&quot;].last(0)}/{Template HV Host RUS:perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Логических процессоров&quot;].last(0)}&gt;5</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>Hyper-V Virtual to Logical CPU Ratio &gt; 5:1</name>
-            <url>{$ABSURL}triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
-            <status>1</status>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
+            <status>0</status>
             <priority>2</priority>
             <description/>
             <type>0</type>
-            <dependencies/>
+            <manual_close>0</manual_close>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} Unavailable by ICMP ping</name>
+                    <expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].max(#3)}=0</expression>
+                    <recovery_expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].min(#3)}&gt;0</recovery_expression>
+                </dependency>
+            </dependencies>
+            <tags>
+                <tag>
+                    <tag>Host</tag>
+                    <value>{HOST.NAME}</value>
+                </tag>
+                <tag>
+                    <tag>Item</tag>
+                    <value>HYPER-V</value>
+                </tag>
+            </tags>
         </trigger>
         <trigger>
-            <expression>{Template Windows HyperV Host RUS:perf_counter[&quot;\Логический процессор низкоуровневой оболочки Hyper-V(_Total)\% времени простоя&quot;].avg(#3)}&lt;10</expression>
+            <expression>{Template HV Host RUS:perf_counter[&quot;\Логический процессор низкоуровневой оболочки Hyper-V(_Total)\% времени простоя&quot;].avg(#3)}&lt;10</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>HyperV Host Idle CPU &lt; 10%</name>
-            <url>{$ABSURL}triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
-            <status>1</status>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
+            <status>0</status>
             <priority>2</priority>
             <description/>
             <type>0</type>
-            <dependencies/>
+            <manual_close>0</manual_close>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} Unavailable by ICMP ping</name>
+                    <expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].max(#3)}=0</expression>
+                    <recovery_expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].min(#3)}&gt;0</recovery_expression>
+                </dependency>
+            </dependencies>
+            <tags>
+                <tag>
+                    <tag>Host</tag>
+                    <value>{HOST.NAME}</value>
+                </tag>
+                <tag>
+                    <tag>Item</tag>
+                    <value>HYPER-V</value>
+                </tag>
+            </tags>
         </trigger>
         <trigger>
-            <expression>{Template Windows HyperV Host RUS:service.info[vmms].last(0)}&lt;&gt;0</expression>
+            <expression>{Template HV Host RUS:service.info[vmms].last(0)}&lt;&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>HyperV service state</name>
-            <url>{$ABSURL}triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
-            <status>1</status>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>triggers.php?form=update&amp;triggerid={TRIGGER.ID}&amp;hostid={HOST.ID}</url>
+            <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
-            <dependencies/>
+            <manual_close>0</manual_close>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME} Unavailable by ICMP ping</name>
+                    <expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].max(#3)}=0</expression>
+                    <recovery_expression>{Template ICMP Ping:icmpping[,{$ICMP_PACKETS},{$ICMP_INTERVAL},,{$ICMP_TIMEOUT}].min(#3)}&gt;0</recovery_expression>
+                </dependency>
+            </dependencies>
+            <tags>
+                <tag>
+                    <tag>Host</tag>
+                    <value>{HOST.NAME}</value>
+                </tag>
+                <tag>
+                    <tag>Item</tag>
+                    <value>HYPER-V</value>
+                </tag>
+            </tags>
         </trigger>
     </triggers>
     <graphs>
@@ -1213,7 +1730,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Логических процессоров&quot;]</key>
                     </item>
                 </graph_item>
@@ -1225,7 +1742,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Виртуальных процессоров&quot;]</key>
                     </item>
                 </graph_item>
@@ -1237,7 +1754,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Разделов&quot;]</key>
                     </item>
                 </graph_item>
@@ -1249,7 +1766,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Наблюдаемых уведомлений&quot;]</key>
                     </item>
                 </graph_item>
@@ -1281,7 +1798,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Логический процессор низкоуровневой оболочки Hyper-V(_Total)\% времени гостевой работы&quot;]</key>
                     </item>
                 </graph_item>
@@ -1293,7 +1810,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Логический процессор низкоуровневой оболочки Hyper-V(_Total)\% времени работы низкоуровневой оболочки&quot;]</key>
                     </item>
                 </graph_item>
@@ -1325,7 +1842,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Виртуальный коммутатор Hyper-V(*)\Получено байт/сек&quot;]</key>
                     </item>
                 </graph_item>
@@ -1337,7 +1854,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Виртуальный коммутатор Hyper-V(*)\Отправлено байт/сек&quot;]</key>
                     </item>
                 </graph_item>
@@ -1369,7 +1886,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Низкоуровневая оболочка Hyper-V\Всего страниц&quot;]</key>
                     </item>
                 </graph_item>
@@ -1401,7 +1918,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[\Сводные данные о работоспособности виртуальных машинах Hyper-V\Критическое состояние]</key>
                     </item>
                 </graph_item>
@@ -1413,7 +1930,7 @@ Requires PowerShell script installed on HyperV Host.</description>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Windows HyperV Host RUS</host>
+                        <host>Template HV Host RUS</host>
                         <key>perf_counter[&quot;\Сводные данные о работоспособности виртуальных машинах Hyper-V\Работоспособность в норме&quot;]</key>
                     </item>
                 </graph_item>

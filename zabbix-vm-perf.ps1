@@ -72,27 +72,24 @@ if ($QueryName -eq '') {
 
 <# Zabbix Hyper-V VM Perf Counter Discovery #>
 if ($psboundparameters.Count -eq 2) {
-
-    switch ($QueryName)
-        {
-        
+    switch ($QueryName) {
         ('GetVMDisks'){
             $ItemType = "VMDISK"
-            $Results =  (Get-Counter -Counter '\Hyper-V Virtual Storage Device(*)\Read Bytes/sec').CounterSamples  | Where-Object  {$_.InstanceName -like '*-'+$VMName+'*'} | select InstanceName
+            $Results =  (Get-Counter -Counter '\Hyper-V Virtual Storage Device(*)\Read Bytes/sec' -ErrorAction SilentlyContinue).CounterSamples  | Where-Object  {$_.InstanceName -like '*-'+$VMName+'*'} | select InstanceName
         }
 
         ('GetVMNICs'){
             $ItemType = "VMNIC"
-            $Results = (Get-Counter -Counter '\Hyper-V Virtual Network Adapter(*)\Packets Sent/sec').CounterSamples | Where-Object  {$_.InstanceName -like $VMName+'_*'} | select InstanceName
+            $Results = (Get-Counter -Counter '\Hyper-V Virtual Network Adapter(*)\Packets Sent/sec' -ErrorAction SilentlyContinue).CounterSamples | Where-Object  {$_.InstanceName -like $VMName+'_*'} | select InstanceName
         }
 
         ('GetVMCPUs'){
              $ItemType  ="VMCPU"
-             $Results = (Get-Counter -Counter '\Hyper-V Hypervisor Virtual Processor(*)\% Total Run Time').CounterSamples | Where-Object {$_.InstanceName -like $VMName+':*'} | select InstanceName
+             $Results = (Get-Counter -Counter '\Hyper-V Hypervisor Virtual Processor(*)\% Total Run Time' -ErrorAction SilentlyContinue).CounterSamples | Where-Object {$_.InstanceName -like $VMName+':*'} | select InstanceName
         }
             
         default {$Results = "Bad Request"; exit}
-        }
+    }
 
     write-host "{"
     write-host " `"data`":["
@@ -100,81 +97,65 @@ if ($psboundparameters.Count -eq 2) {
        
     $n = ($Results | measure).Count
 
-            foreach ($objItem in $Results) {
-                $objItem = $objItem.InstanceName.Replace("_ÒÂÚÂ‚ÓÈ", "_—ÂÚÂ‚ÓÈ")
-                $objItem = $objItem.InstanceName.Replace("_ÛÒÚ‡Â‚¯ËÈ", "_”ÒÚ‡Â‚¯ËÈ")
-                $line = " { `"{#"+$ItemType+"}`":`""+$objItem.InstanceName+"`"}"
-                $line = " { `"{#"+$ItemType+"}`":`""+@($objItem.InstanceName | ConvertTo-Encoding cp866 utf-8)+"`"}"
-                 
-                if ($n -gt 1 ){
-                    $line += ","
-                }
-
-                write-host $line
-                $n--
-            }
-    
+    foreach ($objItem in $Results) {
+        $objItem.InstanceName = $objItem.InstanceName.Replace("_—Å–µ—Ç–µ–≤–æ–π", "_–°–µ—Ç–µ–≤–æ–π")
+        $objItem.InstanceName = $objItem.InstanceName.Replace("_—É—Å—Ç–∞—Ä–µ–≤—à–∏–π", "_–£—Å—Ç–∞—Ä–µ–≤—à–∏–π")
+        $line = " { `"{#"+$ItemType+"}`":`""+$objItem.InstanceName+"`"}"
+        $line = " { `"{#"+$ItemType+"}`":`""+@($objItem.InstanceName | ConvertTo-Encoding cp866 utf-8)+"`"}"
+        if ($n -gt 1 ){
+            $line += ","
+        }
+        write-host $line
+        $n--
+    }
     write-host " ]"
     write-host "}"
     write-host
 
-
     exit
 }
 
-
 <# Zabbix Hyper-V VM Get Performance Counter Value #>
 if ($psboundparameters.Count -eq 3) {
-
-
     switch ($QueryName){
-            <# Disk Counters #>
-            ('VMDISKBytesRead'){
-                    $ItemType = $QueryName
-                    $Results =  (Get-Counter -Counter "\Hyper-V Virtual Storage Device($VMObject)\Read Bytes/sec").CounterSamples
+        <# Disk Counters #>
+        ('VMDISKBytesRead'){
+            $ItemType = $QueryName
+            $Results =  (Get-Counter -Counter "\Hyper-V Virtual Storage Device($VMObject)\Read Bytes/sec" -ErrorAction SilentlyContinue).CounterSamples
+        }
+        ('VMDISKBytesWrite'){
+            $ItemType = $QueryName
+            $Results =  (Get-Counter -Counter "\Hyper-V Virtual Storage Device($VMObject)\Write Bytes/sec" -ErrorAction SilentlyContinue).CounterSamples
+        }
+        ('VMDISKOpsRead'){
+            $ItemType = $QueryName
+            $Results =  (Get-Counter -Counter "\Hyper-V Virtual Storage Device($VMObject)\Read Operations/sec" -ErrorAction SilentlyContinue).CounterSamples
+        }
+        ('VMDISKOpsWrite'){
+            $ItemType = $QueryName
+            $Results =  (Get-Counter -Counter "\Hyper-V Virtual Storage Device($VMObject)\Write Operations/sec" -ErrorAction SilentlyContinue).CounterSamples
+        }
 
-            }
-            ('VMDISKBytesWrite'){
-                    $ItemType = $QueryName
-                    $Results =  (Get-Counter -Counter "\Hyper-V Virtual Storage Device($VMObject)\Write Bytes/sec").CounterSamples
-            }
-            ('VMDISKOpsRead'){
-                    $ItemType = $QueryName
-                    $Results =  (Get-Counter -Counter "\Hyper-V Virtual Storage Device($VMObject)\Read Operations/sec").CounterSamples
+        <# Network Counters #>
+        ('VMNICSent'){
+            $ItemType = $QueryName
+            $Results = (Get-Counter -Counter "\Hyper-V Virtual Network Adapter($VMObject)\Bytes Sent/sec" -ErrorAction SilentlyContinue).CounterSamples
+        }
+        ('VMNICRecv'){
+            $ItemType = $QueryName
+            $Results = (Get-Counter -Counter "\Hyper-V Virtual Network Adapter($VMObject)\Bytes Received/sec" -ErrorAction SilentlyContinue).CounterSamples
+        }
 
-            }
-            ('VMDISKOpsWrite'){
-                    $ItemType = $QueryName
-                    $Results =  (Get-Counter -Counter "\Hyper-V Virtual Storage Device($VMObject)\Write Operations/sec").CounterSamples
-
-            }
-
-            <# Network Counters #>
-            ('VMNICSent'){
-                    $ItemType = $QueryName
-                    $Results = (Get-Counter -Counter "\Hyper-V Virtual Network Adapter($VMObject)\Bytes Sent/sec").CounterSamples
-            }
-            ('VMNICRecv'){
-                    $ItemType = $QueryName
-                    $Results = (Get-Counter -Counter "\Hyper-V Virtual Network Adapter($VMObject)\Bytes Received/sec").CounterSamples
-            }
-
-            <# Virtual CPU Counters #>
-            ('VMCPUTotal'){
-                $ItemType = $QueryName
-                $Results = (Get-Counter -Counter "\Hyper-V Hypervisor Virtual Processor($VMObject)\% Total Run Time").CounterSamples
-            }
-
-
-
-            default {$Results = "Bad Request"; exit}
+        <# Virtual CPU Counters #>
+        ('VMCPUTotal'){
+            $ItemType = $QueryName
+            $Results = (Get-Counter -Counter "\Hyper-V Hypervisor Virtual Processor($VMObject)\% Total Run Time" -ErrorAction SilentlyContinue).CounterSamples
+        }
+        default {$Results = "Bad Request"; exit}
     }
-
-    
-            foreach ($objItem in $Results) {
-                $line = [int]$objItem.CookedValue
-                write-host $line
-            }
-
+    foreach ($objItem in $Results) {
+        $line = [int]$objItem.CookedValue
+        write-host $line
+    }
     exit
 }
